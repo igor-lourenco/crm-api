@@ -23,5 +23,32 @@
         </dependency>
 
     </dependencies>
+    <build>
+        <plugins>
 
+            <!-- esse plugin serve para empacotar o projeto em um JAR executavel que ja contem todas as dependencias -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase> <!-- na fase package do maven, rodar o goal single, que gera o assembly configurado -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <archive>
+                                <manifest> <!-- Insere no MANIFEST.MF do JAR a indicacao de qual classe deve ser executado como main -->
+                                    <mainClass>com.algaworks.crm.Principal</mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>jar-with-dependencies</descriptorRefs> <!-- usa um description pre-definido chamado jar-with-dependencies que coloca todas as dependencias do projeto dentro do JAR final -->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
 </project>
