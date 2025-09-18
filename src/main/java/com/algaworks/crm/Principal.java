@@ -3,15 +3,15 @@ package com.algaworks.crm;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Principal {
-
-    private static final Logger log = Logger.getLogger(Principal.class.getName());
+    private static final Logger log = LoggerFactory.getLogger(Principal.class);
 
     public static void main(String[] args) {
-        log.fine("Iniciando a classe main...");
+        log.debug("Iniciando a classe main...");
 
         CadastroCliente cadastroCliente = new CadastroCliente();
 
@@ -22,22 +22,21 @@ public class Principal {
         cadastroCliente.adicionar(new Cliente("Josefina Amaral", 25));
 
 
-        log.warning("Quantidade de clientes adicionados: " + cadastroCliente.getClientes().size());
+        log.warn("Quantidade de clientes adicionados: " + cadastroCliente.getClientes().size());
 
         List<Cliente> clientes = cadastroCliente.consultar(c -> c.getIdade() > 40);
 
         for (Cliente cliente : clientes) {
-            log.log(Level.INFO, "{0} - {1} anos", new Object[]{
-                StringUtils.abbreviate(cliente.getNome(), 15), cliente.getIdade()});
+            log.info("{} - {} anos", StringUtils.abbreviate(cliente.getNome(), 15), cliente.getIdade());
         }
 
         try {
             clientes.get(10);
         } catch (IndexOutOfBoundsException e) {
-            log.severe("Simulando log para captura da exception... " + e.getMessage());
+            log.error("Simulando log para captura da exception... " + e.getMessage());
         }
 
 
-        log.fine("Fim :-)");
+        log.debug("Fim :-)");
     }
 }
