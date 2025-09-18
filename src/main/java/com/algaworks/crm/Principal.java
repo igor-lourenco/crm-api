@@ -11,7 +11,7 @@ public class Principal {
     private static final Logger log = Logger.getLogger(Principal.class.getName());
 
     public static void main(String[] args) {
-        log.info("Iniciando a classe main...");
+        log.fine("Iniciando a classe main...");
 
         CadastroCliente cadastroCliente = new CadastroCliente();
 
@@ -22,7 +22,7 @@ public class Principal {
         cadastroCliente.adicionar(new Cliente("Josefina Amaral", 25));
 
 
-        log.info("Quantidade de clientes adicionados: " + cadastroCliente.getClientes().size());
+        log.warning("Quantidade de clientes adicionados: " + cadastroCliente.getClientes().size());
 
         List<Cliente> clientes = cadastroCliente.consultar(c -> c.getIdade() > 40);
 
@@ -31,6 +31,6 @@ public class Principal {
                 StringUtils.abbreviate(cliente.getNome(), 15), cliente.getIdade()});
         }
 
-        log.info("Fim :-)");
+        log.fine("Fim :-)");
     }
 }
