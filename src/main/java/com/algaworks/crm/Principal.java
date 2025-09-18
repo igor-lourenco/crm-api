@@ -31,6 +31,13 @@ public class Principal {
                 StringUtils.abbreviate(cliente.getNome(), 15), cliente.getIdade()});
         }
 
+        try {
+            clientes.get(10);
+        } catch (IndexOutOfBoundsException e) {
+            log.severe("Simulando log para captura da exception... " + e.getMessage());
+        }
+
+
         log.fine("Fim :-)");
     }
 }
