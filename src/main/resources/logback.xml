@@ -7,10 +7,21 @@
         </encoder>
     </appender>
 
+
+    <appender name="arquivo" class="ch.qos.logback.core.FileAppender">
+        <file>logs/crm-api.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%date{dd/MM/yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{15} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
     <logger name="com.algaworks.crm" level="TRACE"/>
 
     <root level="INFO">
         <appender-ref ref="saidaPadrao"/>
+        <appender-ref ref="arquivo"/>
     </root>
 
 </configuration>

@@ -1,8 +1,7 @@
-set. 18, 2025 11:16:40 AM com.algaworks.crm.Principal main
-WARNING: Quantidade de clientes adicionados: 5
-set. 18, 2025 11:16:40 AM com.algaworks.crm.Principal main
-SEVERE: Simulando log para captura da exception... Index 10 out of bounds for length 3
-set. 18, 2025 11:36:16 AM com.algaworks.crm.Principal main
-WARNING: Quantidade de clientes adicionados: 5
-set. 18, 2025 11:36:16 AM com.algaworks.crm.Principal main
-SEVERE: Simulando log para captura da exception... Index 10 out of bounds for length 3
+19/09/2025 10:41:03.817 [main] DEBUG c.a.c.Principal - Iniciando a classe main...
+19/09/2025 10:41:03.825 [main] WARN  c.a.c.Principal - Quantidade de clientes adicionados: 5
+19/09/2025 10:41:03.836 [main] INFO  c.a.c.Principal - Maria Conceição - 90 anos
+19/09/2025 10:41:03.838 [main] INFO  c.a.c.Principal - Sebastião da... - 50 anos
+19/09/2025 10:41:03.838 [main] INFO  c.a.c.Principal - Joaquina de ... - 45 anos
+19/09/2025 10:41:03.840 [main] ERROR c.a.c.Principal - Simulando log para captura da exception... Index 10 out of bounds for length 3
+19/09/2025 10:41:03.841 [main] DEBUG c.a.c.Principal - Fim :-)
