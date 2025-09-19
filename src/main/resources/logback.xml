@@ -1,8 +1,9 @@
 <configuration>
 
+
     <appender name="saidaPadrao" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%date %level %logger - %msg%n</pattern>
+            <pattern>%blue(%date{dd/MM/yyyy HH:mm:ss.SSS}) %magenta([%thread]) %highlight(%-5level) %cyan(%logger{15}) - %green(%msg%n)</pattern>
         </encoder>
     </appender>
 
